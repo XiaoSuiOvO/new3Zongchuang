@@ -6,20 +6,6 @@ import CountUp from '../components/react-bits/CountUp/CountUp';
 
 const ringColors = ['#5C0E12', '#8B1A1F', '#C46B51', '#D4A843'];
 
-const RingLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, period }) => {
-  const RADIAN = Math.PI / 180;
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
-  if (percent < 0.05) return null;
-  return (
-    <text x={x} y={y} fill="#F5F5F5" textAnchor="middle" dominantBaseline="central" fontSize={11}>
-      <tspan x={x} dy="-0.4em">{period.split('\n')[0]}</tspan>
-      <tspan x={x} dy="1.3em" fill="#D4A843" fontWeight={700}>{(percent * 100).toFixed(1)}%</tspan>
-    </text>
-  );
-};
-
 const Chapter = memo(function Chapter6() {
   return (
     <section id="chapter6" className="chapter">
@@ -49,7 +35,9 @@ const Chapter = memo(function Chapter6() {
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }} isAnimationActive={false}>
                   <Pie data={entryPeriodData.map(d => ({ period: d.period, value: d.count2025 }))} cx="50%" cy="50%"
-                    innerRadius={45} outerRadius={120} paddingAngle={2} dataKey="value" labelLine={false} label={<RingLabel />}>
+                    innerRadius={45} outerRadius={120} paddingAngle={2} dataKey="value"
+                    label={({ period, value }) => `${period.replace('\n','')}\n${value}万`}
+                    labelLine={{ stroke: '#949494' }}>
                     {entryPeriodData.map((_, i) => (<Cell key={i} fill={ringColors[i]} stroke="none" />))}
                   </Pie>
                   <Tooltip contentStyle={{ background: '#1A1A1A', border: '1px solid rgba(212,168,67,0.4)', borderRadius: 8 }} formatter={(value) => [`${value.toLocaleString()}万`, '党员数']} />
