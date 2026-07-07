@@ -174,7 +174,7 @@ export default function App() {
 
         <div style={{ position: 'relative', zIndex: 10 }}>
           <FadeContent>
-            <p className="hero-subtitle">中国共产党 · 建党105周年数据新闻</p>
+            <p className="hero-subtitle">中国共产党 · 建党105周年</p>
           </FadeContent>
 
           <FadeContent>
