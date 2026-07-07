@@ -1,10 +1,6 @@
 import { memo } from 'react';
 // 第六章：薪火相传
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { entryPeriodData } from '../data';
 import CountUp from '../components/react-bits/CountUp/CountUp';
-
-const ringColors = ['#5C0E12', '#8B1A1F', '#C46B51', '#D4A843'];
 
 const Chapter = memo(function Chapter6() {
   return (
@@ -28,39 +24,21 @@ const Chapter = memo(function Chapter6() {
           </p>
         </div>
 
-        <div className="chapter-grid-2" style={{ marginTop: 32 }}>
-          <div className="data-card">
-            <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>不同时代的入党烙印</h3>
-            <div className="chart-wrapper" style={{ overflow: 'visible' }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }} isAnimationActive={false}>
-                  <Pie data={entryPeriodData.map(d => ({ period: d.period, value: d.count2025 }))} cx="50%" cy="50%"
-                    innerRadius={45} outerRadius={120} paddingAngle={2} dataKey="value"
-                    label={({ period, value }) => `${period.replace('\n','')}\n${value}万`}
-                    labelLine={{ stroke: '#949494' }}>
-                    {entryPeriodData.map((_, i) => (<Cell key={i} fill={ringColors[i]} stroke="none" />))}
-                  </Pie>
-                  <Tooltip contentStyle={{ background: '#1A1A1A', border: '1px solid rgba(212,168,67,0.4)', borderRadius: 8 }} formatter={(value) => [`${value.toLocaleString()}万`, '党员数']} />
-                </PieChart>
-              </ResponsiveContainer>
+        <div className="data-card" style={{ marginTop: 32, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 24 }}>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#E8C97A', letterSpacing: '0.1em', margin: 0 }}>薪火相传</h3>
+            <div className="stat-label" style={{ marginTop: 8, fontSize: 15 }}>
+              每 <span style={{ color: 'var(--gold-light)', fontWeight: 700 }}>3个</span> 党员中就有 <span style={{ color: 'var(--red-primary)', fontWeight: 700 }}>1个</span> 是新时代入党
             </div>
           </div>
-          <div className="data-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <div style={{ textAlign: 'center', marginBottom: 20 }}>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#E8C97A', letterSpacing: '0.1em', margin: 0 }}>薪火相传</h3>
-              <div className="stat-label" style={{ marginTop: 8, fontSize: 15 }}>
-                每 <span style={{ color: 'var(--gold-light)', fontWeight: 700 }}>3个</span> 党员中就有 <span style={{ color: 'var(--red-primary)', fontWeight: 700 }}>1个</span> 是新时代入党
-              </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 48, flexWrap: 'wrap' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div className="stat-number" style={{ color: 'var(--gold-light)' }}><CountUp to={3018.7} decimals={1} duration={2} />万</div>
+              <div className="stat-label">十八大以来入党</div>
             </div>
-            <div className="chapter-grid-2" style={{ gap: 16 }}>
-              <div style={{ textAlign: 'center' }}>
-                <div className="stat-number" style={{ color: 'var(--gold-light)' }}><CountUp to={3018.7} decimals={1} duration={2} />万</div>
-                <div className="stat-label">十八大以来入党</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div className="stat-number" style={{ color: 'var(--red-primary)' }}><CountUp to={29.8} decimals={1} duration={2} />%</div>
-                <div className="stat-label">占总党员近三分之一</div>
-              </div>
+            <div style={{ textAlign: 'center' }}>
+              <div className="stat-number" style={{ color: 'var(--red-primary)' }}><CountUp to={29.8} decimals={1} duration={2} />%</div>
+              <div className="stat-label">占总党员近三分之一</div>
             </div>
           </div>
         </div>
