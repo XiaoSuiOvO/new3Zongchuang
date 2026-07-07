@@ -16,7 +16,7 @@ const Chapter = memo(function Chapter6() {
           从1921年的<span className="num">58颗火种</span>，到2025年的<span className="num">1亿余面旗帜</span>，这一路走了105年。<span className="hl">下一个105年写什么——取决于今天正在看这行字的你。</span>
         </p>
 
-        <div className="callout-box" style={{ textAlign: 'center' }}>
+        <div className="callout-box" style={{ textAlign: 'center', maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>
           <p style={{ fontSize: '1.15rem', lineHeight: 2 }}>
             "组织上入党，一生一次。<br />
             <span className="hl" style={{ fontSize: '1.25rem' }}>思想上入党，一生一世。</span>"<br /><br />
