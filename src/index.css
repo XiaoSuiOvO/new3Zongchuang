@@ -176,13 +176,13 @@ body {
 
 /* ========== 章节通用 ========== */
 .chapter {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 80px 0;
+  padding: 48px 0;
 }
 
 .chapter-container {
@@ -439,7 +439,7 @@ body {
   .hero-year { font-size: 6rem; }
   .chapter-title { font-size: 2rem; letter-spacing: 0.03em; }
   .chapter-subtitle { font-size: 0.95rem; }
-  .chapter { padding: 60px 0; }
+  .chapter { padding: 36px 0; }
   .narrative-text { font-size: 0.95rem; line-height: 1.8; }
   .stat-number { font-size: 2rem; }
   .stat-label { font-size: 12px; }
@@ -486,7 +486,7 @@ body {
   .nav-dot::after { width: 8px; height: 8px; }
 
   /* 章节 */
-  .chapter { padding: 40px 16px; min-height: auto; }
+  .chapter { padding: 28px 16px; min-height: auto; }
   .chapter-container { width: 100%; }
 
   /* 标题 */

@@ -1,10 +1,6 @@
 // 第一章：星火燎原 — "从一叶扁舟到星辰大海"
-import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  ResponsiveContainer,
-} from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { memberGrowth } from '../data';
-import BlurText from '../components/react-bits/BlurText/BlurText';
 import CountUp from '../components/react-bits/CountUp/CountUp';
 import FadeContent from '../components/react-bits/FadeContent/FadeContent';
 
@@ -27,56 +23,6 @@ export default function Chapter1() {
     <section id="chapter1" className="chapter">
       <div className="chapter-container">
         <h2 className="chapter-title">从一叶扁舟，到星辰大海</h2>
-
-        <FadeContent>
-          <div className="data-card chapter-grid-3" style={{ marginBottom: 24 }}>
-            <div>
-              <div className="stat-number" style={{ color: 'var(--gold-light)' }}>
-                <CountUp to={58} duration={2} />
-              </div>
-              <div className="stat-label">1921年 · 最初的星火</div>
-            </div>
-            <div>
-              <div className="stat-number" style={{ color: 'var(--red-primary)' }}>
-                <CountUp to={10128} duration={2.5} />万
-              </div>
-              <div className="stat-label">2025年 · 如今的光芒</div>
-            </div>
-            <div>
-              <div className="stat-number" style={{ color: 'var(--gold)' }}>
-                105年
-              </div>
-              <div className="stat-label">从未停止的接力</div>
-            </div>
-          </div>
-        </FadeContent>
-
-        <div className="data-card">
-          <div className="chart-wrapper">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={memberGrowth} margin={{ top: 30, right: 30, left: 20, bottom: 10 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                <XAxis dataKey="year" stroke="#949494" tick={{ fill: '#B0B0B0', fontSize: 12 }} />
-                <YAxis stroke="#949494" tick={{ fill: '#B0B0B0', fontSize: 12 }} />
-                <Tooltip content={<CustomTooltip />} />
-                <defs>
-                  <linearGradient id="lineGrad1" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#C41E23" />
-                    <stop offset="100%" stopColor="#D4A843" />
-                  </linearGradient>
-                </defs>
-                <Line
-                  type="monotone"
-                  dataKey="count"
-                  stroke="url(#lineGrad1)"
-                  strokeWidth={3}
-                  dot={{ fill: '#D4A843', strokeWidth: 0, r: 4 }}
-                  activeDot={{ fill: '#C41E23', stroke: '#D4A843', strokeWidth: 2, r: 8 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
 
         <div className="chapter-question">
           一百多年前，一群平均年龄只有28岁的年轻人，在一条小船上做了一个决定。这个决定，改变了中国。
@@ -114,9 +60,46 @@ export default function Chapter1() {
 
         <p className="narrative-text">
           上大学的时候，我们都想过一个问题：<span className="hl">我想成为什么样的人？我想为这个世界做点什么？</span>
-          1921年的那群年轻人，用一辈子回答了这个问题。
-          今天，轮到你了。
+          1921年的那群年轻人，用一辈子回答了这个问题。今天，轮到你了。
         </p>
+
+        <FadeContent>
+          <div className="data-card chapter-grid-3" style={{ marginTop: 32 }}>
+            <div>
+              <div className="stat-number" style={{ color: 'var(--gold-light)' }}><CountUp to={58} duration={2} /></div>
+              <div className="stat-label">1921年 · 最初的星火</div>
+            </div>
+            <div>
+              <div className="stat-number" style={{ color: 'var(--red-primary)' }}><CountUp to={10128} duration={2.5} />万</div>
+              <div className="stat-label">2025年 · 如今的光芒</div>
+            </div>
+            <div>
+              <div className="stat-number" style={{ color: 'var(--gold)' }}>105年</div>
+              <div className="stat-label">从未停止的接力</div>
+            </div>
+          </div>
+        </FadeContent>
+
+        <div className="data-card">
+          <div className="chart-wrapper">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={memberGrowth} margin={{ top: 30, right: 30, left: 20, bottom: 10 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
+                <XAxis dataKey="year" stroke="#949494" tick={{ fill: '#B0B0B0', fontSize: 12 }} />
+                <YAxis stroke="#949494" tick={{ fill: '#B0B0B0', fontSize: 12 }} />
+                <Tooltip content={<CustomTooltip />} />
+                <defs>
+                  <linearGradient id="lineGrad1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#C41E23" /><stop offset="100%" stopColor="#D4A843" />
+                  </linearGradient>
+                </defs>
+                <Line type="monotone" dataKey="count" stroke="url(#lineGrad1)" strokeWidth={3}
+                  dot={{ fill: '#D4A843', strokeWidth: 0, r: 4 }}
+                  activeDot={{ fill: '#C41E23', stroke: '#D4A843', strokeWidth: 2, r: 8 }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
       </div>
     </section>
   );
