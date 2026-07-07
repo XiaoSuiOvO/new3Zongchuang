@@ -1,3 +1,4 @@
+import { memo } from 'react';
 // 第四章：青春接力
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { ageDistribution, youthRecruitment } from '../data';
@@ -6,7 +7,7 @@ import FadeContent from '../components/react-bits/FadeContent/FadeContent';
 
 const ageColors = ['#4ADE80','#60C070','#7CB860','#98B050','#B4A840','#D0A030','#E89020','#C41E23'];
 
-export default function Chapter4() {
+const Chapter = memo(function Chapter4() {
   const youthData = ageDistribution.slice(0, 2);
   const totalYouth = youthData.reduce((s, d) => s + d.count, 0);
   return (
@@ -57,7 +58,7 @@ export default function Chapter4() {
             <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>新发展党员中 · 青年占比</h3>
             <div className="chart-wrapper">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={youthRecruitment} margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
+                <BarChart data={youthRecruitment} margin={{ top: 5, right: 20, left: 20, bottom: 5 }} isAnimationActive={false}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
                   <XAxis dataKey="year" stroke="#949494" tick={{ fill: '#B0B0B0', fontSize: 14 }} />
                   <YAxis stroke="#949494" tick={{ fill: '#B0B0B0' }} domain={[0, 100]} tickFormatter={v => `${v}%`} />
@@ -72,3 +73,5 @@ export default function Chapter4() {
     </section>
   );
 }
+);
+export default Chapter

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 // 第二章：扎根中国
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { organizationGrowth, coverageRate } from '../data';
@@ -5,7 +6,7 @@ import FadeContent from '../components/react-bits/FadeContent/FadeContent';
 
 const orgColors = ['#C41E23','#B83230','#A34340','#C46B51','#D4906A','#E8C97A','#D4A843'];
 
-export default function Chapter2() {
+const Chapter = memo(function Chapter2() {
   return (
     <section id="chapter2" className="chapter">
       <div className="chapter-container">
@@ -67,3 +68,5 @@ export default function Chapter2() {
     </section>
   );
 }
+);
+export default Chapter

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 // 第五章：社会基石
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { occupationDistribution, orgByField } from '../data';
@@ -5,7 +6,7 @@ import { occupationDistribution, orgByField } from '../data';
 const pieColors = ['#C41E23','#D4906A','#E8C97A','#4ADE80'];
 const barColors = ['#C41E23','#D4906A','#E8C97A','#C46B51','#8B1A1F','#B0B0B0','#D4A843','#4ADE80'];
 
-export default function Chapter5() {
+const Chapter = memo(function Chapter5() {
   return (
     <section id="chapter5" className="chapter">
       <div className="chapter-container">
@@ -46,7 +47,7 @@ export default function Chapter5() {
             <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>党组织覆盖的主要领域</h3>
             <div className="chart-wrapper" style={{ overflow: 'visible' }}>
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
+                <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }} isAnimationActive={false}>
                   <Pie data={orgByField} cx="50%" cy="50%" innerRadius={50} outerRadius={110} paddingAngle={3} dataKey="count" nameKey="field"
                     label={({ field, count }) => `${field}\n${count}万`} labelLine={{ stroke: '#949494' }}>
                     {orgByField.map((_, i) => (<Cell key={i} fill={pieColors[i]} stroke="none" />))}
@@ -61,3 +62,5 @@ export default function Chapter5() {
     </section>
   );
 }
+);
+export default Chapter

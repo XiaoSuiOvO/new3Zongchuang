@@ -1,3 +1,4 @@
+import { memo } from 'react';
 // 第三章：知识重塑
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { educationData } from '../data';
@@ -6,7 +7,7 @@ import FadeContent from '../components/react-bits/FadeContent/FadeContent';
 
 const eduColors = { illiterate: '#5C0E12', primary: '#8B1A1F', junior: '#C46B51', senior: '#D4A843' };
 
-export default function Chapter3() {
+const Chapter = memo(function Chapter3() {
   const stacked = educationData.map(d => ({ period: d.period, '文盲/半文盲': d.illiterate, '小学': d.primary, '初中及以下': d.junior, '大专及以上': d.senior }));
   return (
     <section id="chapter3" className="chapter">
@@ -53,3 +54,5 @@ export default function Chapter3() {
     </section>
   );
 }
+);
+export default Chapter

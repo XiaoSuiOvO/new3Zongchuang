@@ -1,3 +1,4 @@
+import { memo } from 'react';
 // 第六章：薪火相传
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { entryPeriodData } from '../data';
@@ -19,7 +20,7 @@ const RingLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, period
   );
 };
 
-export default function Chapter6() {
+const Chapter = memo(function Chapter6() {
   return (
     <section id="chapter6" className="chapter">
       <div className="chapter-container">
@@ -46,7 +47,7 @@ export default function Chapter6() {
             <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>不同时代的入党烙印</h3>
             <div className="chart-wrapper" style={{ overflow: 'visible' }}>
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
+                <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }} isAnimationActive={false}>
                   <Pie data={entryPeriodData.map(d => ({ period: d.period, value: d.count2025 }))} cx="50%" cy="50%"
                     innerRadius={45} outerRadius={120} paddingAngle={2} dataKey="value" labelLine={false} label={<RingLabel />}>
                     {entryPeriodData.map((_, i) => (<Cell key={i} fill={ringColors[i]} stroke="none" />))}
@@ -79,3 +80,5 @@ export default function Chapter6() {
     </section>
   );
 }
+);
+export default Chapter

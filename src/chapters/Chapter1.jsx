@@ -1,3 +1,4 @@
+import { memo } from 'react';
 // 第一章：星火燎原
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { memberGrowth } from '../data';
@@ -19,7 +20,7 @@ const CustomTooltip = ({ active, payload }) => {
   );
 };
 
-export default function Chapter1() {
+const Chapter = memo(function Chapter1() {
   return (
     <section id="chapter1" className="chapter">
       <div className="chapter-container">
@@ -78,3 +79,5 @@ export default function Chapter1() {
     </section>
   );
 }
+);
+export default Chapter
