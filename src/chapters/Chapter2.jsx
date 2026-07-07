@@ -23,6 +23,7 @@ export default function Chapter2() {
 
         <FadeContent>
           <div className="data-card" style={{ marginTop: 32 }}>
+            <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>基层组织数量增长（1949—2025）</h3>
             <div className="chart-wrapper">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={organizationGrowth} margin={{ top: 10, right: 30, left: 20, bottom: 10 }}>

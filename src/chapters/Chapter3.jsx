@@ -32,6 +32,7 @@ export default function Chapter3() {
         </FadeContent>
 
         <div className="data-card" style={{ marginTop: 20 }}>
+          <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>学历结构的历史转向</h3>
           <div className="chart-wrapper tall">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={stacked} margin={{ top: 10, right: 30, left: 20, bottom: 10 }} stackOffset="expand" layout="vertical">

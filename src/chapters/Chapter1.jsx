@@ -54,6 +54,7 @@ export default function Chapter1() {
         </FadeContent>
 
         <div className="data-card" style={{ marginTop: 20 }}>
+          <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>党员总量里程碑（对数刻度）</h3>
           <div className="chart-wrapper">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={memberGrowth} margin={{ top: 30, right: 30, left: 20, bottom: 10 }}>
