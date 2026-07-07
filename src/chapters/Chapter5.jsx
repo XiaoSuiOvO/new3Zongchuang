@@ -2,6 +2,7 @@ import { memo } from 'react';
 // 第五章：社会基石
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { occupationDistribution, orgByField } from '../data';
+import careerImage from '../assets/202210161665891854593_75_b.jpg';
 
 const pieColors = ['#C41E23','#D4906A','#E8C97A','#4ADE80'];
 const barColors = ['#C41E23','#D4906A','#E8C97A','#C46B51','#8B1A1F','#B0B0B0','#D4A843','#4ADE80'];
@@ -12,18 +13,23 @@ const Chapter = memo(function Chapter5() {
       <div className="chapter-container">
         <h2 className="chapter-title">无论学什么，都能发光</h2>
 
-        <p className="narrative-text">
-          农牧渔民<span className="num">2606.8万</span>人，在田间地头；专业技术人员<span className="num">1669.2万</span>人，在实验室、手术室、讲台；管理人员<span className="num">1186.2万</span>人，在企业一线；还有<span className="num">253.7万</span>名学生党员——<span className="hl">在图书馆、在社团、在每一次志愿服务里。</span>党员不是新闻里的"领导"，而是各个行业里具体的人。
-        </p>
-
-        <p className="narrative-text">
-          你可能纠结"这个专业，入党有什么用"。答案很简单：<span className="hl">你的专业能力 × 党组织的平台 = 让你做的事真正影响社会。</span>学计算机？党组织里有攻坚"卡脖子"技术的科研团队。学医学？基层的乡村医生计划需要你。学教育？支教、教育扶贫——有无数的渠道让你的知识抵达最需要它的人。
-        </p>
-
-        <div className="callout-box">
-          <p>
-            <span className="hl">别把入党当作"毕业前的一项指标"。</span>把它看作——你即将进入的任何一个行业里，已经有一群最优秀的人在等你。<span className="hl">你不是去"服从安排"，你是去"大展拳脚"。</span>
-          </p>
+        <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ flex: '0 0 auto', maxWidth: 340, borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <img src={careerImage} alt="党员职业分布" style={{ display: 'block', width: '100%', height: 'auto' }} />
+          </div>
+          <div style={{ flex: '1 1 320px', minWidth: 0 }}>
+            <p className="narrative-text" style={{ marginTop: 0 }}>
+              农牧渔民<span className="num">2606.8万</span>人，在田间地头；专业技术人员<span className="num">1669.2万</span>人，在实验室、手术室、讲台；管理人员<span className="num">1186.2万</span>人，在企业一线；还有<span className="num">253.7万</span>名学生党员——<span className="hl">在图书馆、在社团、在每一次志愿服务里。</span>党员不是新闻里的"领导"，而是各个行业里具体的人。
+            </p>
+            <p className="narrative-text">
+              你可能纠结"这个专业，入党有什么用"。答案很简单：<span className="hl">你的专业能力 × 党组织的平台 = 让你做的事真正影响社会。</span>学计算机？党组织里有攻坚"卡脖子"技术的科研团队。学医学？基层的乡村医生计划需要你。学教育？支教、教育扶贫——有无数的渠道让你的知识抵达最需要它的人。
+            </p>
+            <div className="callout-box">
+              <p>
+                <span className="hl">别把入党当作"毕业前的一项指标"。</span>把它看作——你即将进入的任何一个行业里，已经有一群最优秀的人在等你。<span className="hl">你不是去"服从安排"，你是去"大展拳脚"。</span>
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="chapter-grid-2" style={{ marginTop: 32 }}>
