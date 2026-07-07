@@ -44,9 +44,9 @@ export default function Chapter6() {
         <div className="chapter-grid-2" style={{ marginTop: 32 }}>
           <div className="data-card">
             <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>不同时代的入党烙印</h3>
-            <div className="chart-wrapper">
+            <div className="chart-wrapper" style={{ overflow: 'visible' }}>
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
+                <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
                   <Pie data={entryPeriodData.map(d => ({ period: d.period, value: d.count2025 }))} cx="50%" cy="50%"
                     innerRadius={45} outerRadius={120} paddingAngle={2} dataKey="value" labelLine={false} label={<RingLabel />}>
                     {entryPeriodData.map((_, i) => (<Cell key={i} fill={ringColors[i]} stroke="none" />))}

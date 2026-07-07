@@ -46,10 +46,10 @@ export default function Chapter5() {
           <FadeContent>
             <div className="data-card">
               <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>党组织覆盖的主要领域</h3>
-              <div className="chart-wrapper">
+              <div className="chart-wrapper" style={{ overflow: 'visible' }}>
                 <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie data={orgByField} cx="50%" cy="50%" innerRadius={55} outerRadius={120} paddingAngle={3} dataKey="count" nameKey="field"
+                  <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
+                    <Pie data={orgByField} cx="50%" cy="50%" innerRadius={50} outerRadius={110} paddingAngle={3} dataKey="count" nameKey="field"
                       label={({ field, count }) => `${field}\n${count}万`} labelLine={{ stroke: '#949494' }}>
                       {orgByField.map((_, i) => (<Cell key={i} fill={pieColors[i]} stroke="none" />))}
                     </Pie>
