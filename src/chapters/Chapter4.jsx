@@ -16,7 +16,7 @@ const Chapter = memo(function Chapter4() {
       <div className="chapter-container">
         <h2 className="chapter-title">大多数新党员，和你一样年轻</h2>
 
-        <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start', flexWrap: 'wrap' }}>
           <div style={{ flex: '1 1 320px', minWidth: 0 }}>
             <p className="narrative-text" style={{ marginTop: 0 }}>
               2025年，全国新发展党员<span className="num">208.6万</span>人中，<span className="hl">35岁及以下占84.0%——175.3万人。</span>175.3万是什么概念？相当于清北复交浙五所顶尖高校在校生加起来都不够。他们和你上着一样的课、刷着一样的B站——<span className="hl">但他们多做了一个决定：加入中国共产党。</span>
@@ -30,7 +30,7 @@ const Chapter = memo(function Chapter4() {
               </p>
             </div>
           </div>
-          <div style={{ flex: '0 0 auto', maxWidth: 340, borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ flex: '0 0 auto', maxWidth: 420, borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
             <img src={youthImage} alt="青年党员" style={{ display: 'block', width: '100%', height: 'auto' }} />
           </div>
         </div>
