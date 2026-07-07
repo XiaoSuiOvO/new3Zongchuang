@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { organizationGrowth, coverageRate } from '../data';
 import FadeContent from '../components/react-bits/FadeContent/FadeContent';
+import orgImage from '../assets/R-C.jpg';
 
 const orgColors = ['#C41E23','#B83230','#A34340','#C46B51','#D4906A','#E8C97A','#D4A843'];
 
@@ -12,14 +13,20 @@ const Chapter = memo(function Chapter2() {
       <div className="chapter-container">
         <h2 className="chapter-title">无论你在哪里，我们都在</h2>
 
-        <p className="narrative-text">
-          1949年，全国只有<span className="num">20万个</span>基层党组织。今天——<span className="num">543.1万个</span>党组织像毛细血管一样，深入到中国的每一座城市、每一个乡镇、每一条街道。<span className="hl">无论你来自哪里、学什么专业、将来去哪个城市——组织就在你身边。</span>从北上广深的写字楼，到青藏高原的牧民定居点，99.9%的覆盖率是543万个党支部日复一日的真实存在。
-        </p>
-
-        <div className="callout-box">
-          <p>
-            <span className="hl">入党之后，你不是一个人在奋斗。</span>从你递上入党申请书的那天起，身后就站着一个有105年历史、1亿名成员、543万个基层组织的集体。你想组织支教？想为家乡做点什么？<span className="hl">组织的力量，会让你的想法变成现实。</span>
-          </p>
+        <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ flex: '0 0 auto', maxWidth: 340, borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <img src={orgImage} alt="基层党组织" style={{ display: 'block', width: '100%', height: 'auto' }} />
+          </div>
+          <div style={{ flex: '1 1 320px', minWidth: 0 }}>
+            <p className="narrative-text" style={{ marginTop: 0 }}>
+              1949年，全国只有<span className="num">20万个</span>基层党组织。今天——<span className="num">543.1万个</span>党组织像毛细血管一样，深入到中国的每一座城市、每一个乡镇、每一条街道。<span className="hl">无论你来自哪里、学什么专业、将来去哪个城市——组织就在你身边。</span>从北上广深的写字楼，到青藏高原的牧民定居点，99.9%的覆盖率是543万个党支部日复一日的真实存在。
+            </p>
+            <div className="callout-box">
+              <p>
+                <span className="hl">入党之后，你不是一个人在奋斗。</span>从你递上入党申请书的那天起，身后就站着一个有105年历史、1亿名成员、543万个基层组织的集体。你想组织支教？想为家乡做点什么？<span className="hl">组织的力量，会让你的想法变成现实。</span>
+              </p>
+            </div>
+          </div>
         </div>
 
         <FadeContent>
