@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { organizationGrowth, coverageRate } from '../data';
 import FadeContent from '../components/react-bits/FadeContent/FadeContent';
 
-const orgColors = ['#C41E23', '#B83230', '#A34340', '#C46B51', '#D4906A', '#E8C97A', '#D4A843'];
+const orgColors = ['#C41E23','#B83230','#A34340','#C46B51','#D4906A','#E8C97A','#D4A843'];
 
 export default function Chapter2() {
   return (
@@ -11,22 +11,13 @@ export default function Chapter2() {
       <div className="chapter-container">
         <h2 className="chapter-title">无论你在哪里，我们都在</h2>
 
-        <div className="chapter-question">
-          543万个基层党组织，遍布中国的每一个角落——包括你脚下的这片土地。
-        </div>
-
         <p className="narrative-text">
-          1949年新中国成立时，全国只有大约<span className="num">20万个</span>基层党组织。那时候很多偏远乡村连一条像样的路都没有。而今天——<span className="num">543.1万个</span>党组织像毛细血管一样，深入到中国的每一座城市、每一个乡镇、每一条街道。
-        </p>
-
-        <p className="narrative-text">
-          想想这意味着什么：<span className="hl">无论你来自哪里、学什么专业、将来去哪个城市工作——</span>你的身边就有一个党组织。不是你去找组织，而是<span className="hl">组织就在你身边</span>。从北上广深的写字楼，到青藏高原的牧民定居点，<span className="num">99.9%</span>的覆盖率不是一句口号——它是543万个党支部日复一日的真实存在。
+          1949年，全国只有<span className="num">20万个</span>基层党组织。今天——<span className="num">543.1万个</span>党组织像毛细血管一样，深入到中国的每一座城市、每一个乡镇、每一条街道。<span className="hl">无论你来自哪里、学什么专业、将来去哪个城市——组织就在你身边。</span>从北上广深的写字楼，到青藏高原的牧民定居点，99.9%的覆盖率是543万个党支部日复一日的真实存在。
         </p>
 
         <div className="callout-box">
           <p>
-            <span className="hl">入党之后，你不是一个人在奋斗。</span><br />
-            从你郑重地递上入党申请书的那天起，身后就站着一个有105年历史、1亿名成员、543万个基层组织的集体。你想组织一次支教活动？想为家乡做点什么？<span className="hl">组织的力量，会让你的想法变成现实。</span>
+            <span className="hl">入党之后，你不是一个人在奋斗。</span>从你递上入党申请书的那天起，身后就站着一个有105年历史、1亿名成员、543万个基层组织的集体。你想组织支教？想为家乡做点什么？<span className="hl">组织的力量，会让你的想法变成现实。</span>
           </p>
         </div>
 
@@ -51,7 +42,7 @@ export default function Chapter2() {
         </FadeContent>
 
         <div className="data-card" style={{ marginTop: 20 }}>
-          <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.05em' }}>在你生活的地方，党组织覆盖率</h3>
+          <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.05em', textAlign: 'center' }}>在你生活的地方，党组织覆盖率</h3>
           <table style={{ width: '100%', borderCollapse: 'collapse', color: 'var(--text-secondary)' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>

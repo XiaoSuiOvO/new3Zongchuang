@@ -3,9 +3,8 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { ageDistribution, youthRecruitment } from '../data';
 import CountUp from '../components/react-bits/CountUp/CountUp';
 import FadeContent from '../components/react-bits/FadeContent/FadeContent';
-import ShinyText from '../components/react-bits/ShinyText/ShinyText';
 
-const ageColors = ['#4ADE80', '#60C070', '#7CB860', '#98B050', '#B4A840', '#D0A030', '#E89020', '#C41E23'];
+const ageColors = ['#4ADE80','#60C070','#7CB860','#98B050','#B4A840','#D0A030','#E89020','#C41E23'];
 
 export default function Chapter4() {
   const youthData = ageDistribution.slice(0, 2);
@@ -13,30 +12,19 @@ export default function Chapter4() {
   return (
     <section id="chapter4" className="chapter">
       <div className="chapter-container">
-        <h2 className="chapter-title">
-          <ShinyText text="大多数新党员，和你一样年轻" speed={3}
-            style={{ fontSize: 'inherit', fontWeight: 'inherit', background: 'linear-gradient(180deg, #E8C97A 0%, #D4A843 50%, #B8860B 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', display: 'inline' }} />
-        </h2>
-
-        <div className="chapter-question">
-          如果你觉得入党是"少数人的选择"——数据告诉你，你错了。84%的新党员都不到35岁。这不是"少数"，这是"大多数"。
-        </div>
+        <h2 className="chapter-title">大多数新党员，和你一样年轻</h2>
 
         <p className="narrative-text">
-          很多人对入党的印象还停留在"中年干部"、"办公室政治"——但数字不会撒谎：2025年，全国新发展党员<span className="num">208.6万</span>人中，<span className="hl">35岁及以下的年轻人占了整整84.0%——175.3万人。</span>这个比例还在逐年攀升。
+          2025年，全国新发展党员<span className="num">208.6万</span>人中，<span className="hl">35岁及以下占84.0%——175.3万人。</span>175.3万是什么概念？相当于清北复交浙五所顶尖高校在校生加起来都不够。他们和你上着一样的课、刷着一样的B站——<span className="hl">但他们多做了一个决定：加入中国共产党。</span>
         </p>
 
         <p className="narrative-text">
-          175.3万人是什么概念？相当于<span className="hl">北京大学、清华大学、复旦大学、上海交大、浙江大学五所顶尖高校的在校生加起来，都凑不够这个数。</span>去年一年，就有这么多和你年龄相仿的年轻人，郑重地写下了入党申请书。他们和你上着一样的课、刷着一样的B站、追着一样的番——<span className="hl">但他们多做了一个决定：加入中国共产党。</span>
-        </p>
-
-        <p className="narrative-text">
-          而且，2025年新发展党员中女性占比<span className="num">46.5%</span>、少数民族占比<span className="num">10.2%</span>。这个组织不是只属于某一类人——<span className="hl">无论你的性别、民族、籍贯，大门都是敞开的。</span>一大代表平均年龄28岁；今天，新党员中超过八成不到35岁。105年来，<span className="hl">"年轻"一直是这个组织最稳定的基因。</span>
+          新发展党员中女性占比<span className="num">46.5%</span>、少数民族占比<span className="num">10.2%</span>。无论你的性别、民族、籍贯，大门都是敞开的。一大代表平均年龄28岁；今天新党员超八成不到35岁。<span className="hl">105年来，"年轻"一直是这个组织最稳定的基因。</span>
         </p>
 
         <div className="callout-box">
           <p>
-            <span className="hl">所以，入党不是"追随上一代的脚步"——</span>而是和你身边最优秀、最有行动力的同龄人一起，站到改变社会的前线去。入党不是"被同化"——<span className="hl">是你们这代人，正在重新定义它。</span>你带进去的每一个新想法、每一种新视野，都会让这个百年组织变得更年轻、更贴近时代。
+            <span className="hl">入党不是"追随上一代"，而是和你身边最优秀的同龄人一起，站到改变社会的前线去。</span>不是"被同化"——<span className="hl">是你们这代人正在重新定义它。</span>你带进去的每一个新想法，都会让这个百年组织变得更年轻。
           </p>
         </div>
 
@@ -50,7 +38,7 @@ export default function Chapter4() {
 
         <div className="chapter-grid-2" style={{ marginTop: 20 }}>
           <div className="data-card">
-            <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em' }}>2025年党员年龄分布</h3>
+            <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>2025年党员年龄分布</h3>
             <div className="chart-wrapper">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={[...ageDistribution].reverse()} layout="vertical" margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
@@ -66,7 +54,7 @@ export default function Chapter4() {
             </div>
           </div>
           <div className="data-card">
-            <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em' }}>新发展党员中 · 青年占比</h3>
+            <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>新发展党员中 · 青年占比</h3>
             <div className="chart-wrapper">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={youthRecruitment} margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
