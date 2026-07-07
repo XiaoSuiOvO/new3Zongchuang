@@ -4,6 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { educationData } from '../data';
 import CountUp from '../components/react-bits/CountUp/CountUp';
 import FadeContent from '../components/react-bits/FadeContent/FadeContent';
+import eduImage from '../assets/20220908125617490.jpg';
 
 const eduColors = { illiterate: '#5C0E12', primary: '#8B1A1F', junior: '#C46B51', senior: '#D4A843' };
 
@@ -14,14 +15,20 @@ const Chapter = memo(function Chapter3() {
       <div className="chapter-container">
         <h2 className="chapter-title">你手中的书本，就是力量</h2>
 
-        <p className="narrative-text">
-          1949年，党员中<span className="num">69%是文盲半文盲</span>。但共产党有一个传统：<span className="hl">一边干革命，一边学文化</span>。识字班、夜校、扫盲运动……这个党用了70年，把自己从"工农武装"锻造成了"知识铁军"。2025年，大专以上学历党员达<span className="num">5976.5万人</span>，占总数59%；新发展党员中超过一半拥有大专以上学历。
-        </p>
-
-        <div className="callout-box">
-          <p>
-            <span className="hl">中国最聪明的大脑正在向党组织聚集。</span>从高校实验室到航天发射场，从归国精英到乡村教师——他们用行动证明：信仰科学与信仰共产主义，从来不是对立的。当一个科学家把个人才华融入国家需求时，他能改变的远不止一篇论文。
-          </p>
+        <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1 1 320px', minWidth: 0 }}>
+            <p className="narrative-text" style={{ marginTop: 0 }}>
+              1949年，党员中<span className="num">69%是文盲半文盲</span>。但共产党有一个传统：<span className="hl">一边干革命，一边学文化</span>。识字班、夜校、扫盲运动……这个党用了70年，把自己从"工农武装"锻造成了"知识铁军"。2025年，大专以上学历党员达<span className="num">5976.5万人</span>，占总数59%；新发展党员中超过一半拥有大专以上学历。
+            </p>
+            <div className="callout-box">
+              <p>
+                <span className="hl">中国最聪明的大脑正在向党组织聚集。</span>从高校实验室到航天发射场，从归国精英到乡村教师——他们用行动证明：信仰科学与信仰共产主义，从来不是对立的。当一个科学家把个人才华融入国家需求时，他能改变的远不止一篇论文。
+              </p>
+            </div>
+          </div>
+          <div style={{ flex: '0 0 auto', maxWidth: 320, borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <img src={eduImage} alt="党员学习" style={{ display: 'block', width: '100%', height: 'auto' }} />
+          </div>
         </div>
 
         <FadeContent>
