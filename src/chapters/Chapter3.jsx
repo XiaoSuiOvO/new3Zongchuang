@@ -28,7 +28,6 @@ export default function Chapter3() {
   return (
     <section id="chapter3" className="chapter">
       <div className="chapter-container">
-        <BlurText text="第三章 · 知识重塑" className="chapter-subtitle" />
         <h2 className="chapter-title">你手中的书本，就是力量</h2>
 
         <div className="data-card" style={{ marginBottom: 24 }}>

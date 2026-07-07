@@ -14,7 +14,6 @@ export default function Chapter5() {
   return (
     <section id="chapter5" className="chapter">
       <div className="chapter-container">
-        <BlurText text="第五章 · 社会基石" className="chapter-subtitle" />
         <h2 className="chapter-title">无论学什么，都能发光</h2>
 
         <div className="chapter-grid-2">

@@ -13,7 +13,6 @@ export default function Chapter2() {
   return (
     <section id="chapter2" className="chapter">
       <div className="chapter-container">
-        <BlurText text="第二章 · 扎根中国" className="chapter-subtitle" />
         <h2 className="chapter-title">无论你在哪里，我们都在</h2>
 
         <FadeContent>

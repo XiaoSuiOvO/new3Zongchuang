@@ -26,7 +26,6 @@ export default function Chapter1() {
   return (
     <section id="chapter1" className="chapter">
       <div className="chapter-container">
-        <BlurText text="第一章 · 星火燎原" className="chapter-subtitle" />
         <h2 className="chapter-title">从一叶扁舟，到星辰大海</h2>
 
         <FadeContent>

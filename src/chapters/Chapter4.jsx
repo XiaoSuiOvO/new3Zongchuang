@@ -18,7 +18,6 @@ export default function Chapter4() {
   return (
     <section id="chapter4" className="chapter">
       <div className="chapter-container">
-        <BlurText text="第四章 · 青春接力" className="chapter-subtitle" />
         <h2 className="chapter-title">
           <ShinyText
             text="大多数新党员，和你一样年轻"
