@@ -1,7 +1,6 @@
 // 第五章：社会基石
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { occupationDistribution, orgByField } from '../data';
-import FadeContent from '../components/react-bits/FadeContent/FadeContent';
 
 const pieColors = ['#C41E23','#D4906A','#E8C97A','#4ADE80'];
 const barColors = ['#C41E23','#D4906A','#E8C97A','#C46B51','#8B1A1F','#B0B0B0','#D4A843','#4ADE80'];
@@ -43,22 +42,20 @@ export default function Chapter5() {
               </ResponsiveContainer>
             </div>
           </div>
-          <FadeContent>
-            <div className="data-card">
-              <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>党组织覆盖的主要领域</h3>
-              <div className="chart-wrapper" style={{ overflow: 'visible' }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
-                    <Pie data={orgByField} cx="50%" cy="50%" innerRadius={50} outerRadius={110} paddingAngle={3} dataKey="count" nameKey="field"
-                      label={({ field, count }) => `${field}\n${count}万`} labelLine={{ stroke: '#949494' }}>
-                      {orgByField.map((_, i) => (<Cell key={i} fill={pieColors[i]} stroke="none" />))}
-                    </Pie>
-                    <Tooltip contentStyle={{ background: '#1A1A1A', border: '1px solid rgba(212,168,67,0.4)', borderRadius: 8 }} />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
+          <div className="data-card">
+            <h3 style={{ color: 'var(--text-secondary)', marginBottom: 16, letterSpacing: '0.04em', textAlign: 'center' }}>党组织覆盖的主要领域</h3>
+            <div className="chart-wrapper" style={{ overflow: 'visible' }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
+                  <Pie data={orgByField} cx="50%" cy="50%" innerRadius={50} outerRadius={110} paddingAngle={3} dataKey="count" nameKey="field"
+                    label={({ field, count }) => `${field}\n${count}万`} labelLine={{ stroke: '#949494' }}>
+                    {orgByField.map((_, i) => (<Cell key={i} fill={pieColors[i]} stroke="none" />))}
+                  </Pie>
+                  <Tooltip contentStyle={{ background: '#1A1A1A', border: '1px solid rgba(212,168,67,0.4)', borderRadius: 8 }} />
+                </PieChart>
+              </ResponsiveContainer>
             </div>
-          </FadeContent>
+          </div>
         </div>
       </div>
     </section>
