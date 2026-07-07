@@ -3,6 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { memberGrowth } from '../data';
 import CountUp from '../components/react-bits/CountUp/CountUp';
 import FadeContent from '../components/react-bits/FadeContent/FadeContent';
+import shipImage from '../assets/0.webp';
 
 const CustomTooltip = ({ active, payload }) => {
   if (!active || !payload?.length) return null;
@@ -24,8 +25,8 @@ export default function Chapter1() {
       <div className="chapter-container">
         <h2 className="chapter-title">从一叶扁舟，到星辰大海</h2>
 
-        <div style={{ display: 'flex', gap: 32, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-          <div style={{ flex: '1 1 320px', minWidth: 0 }}>
+        <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1 1 300px', minWidth: 0 }}>
             <p className="narrative-text" style={{ marginTop: 0 }}>
               1921年7月，13个人围坐在上海法租界一栋石库门房子的长桌前。他们中<span className="hl">最大的45岁，最小的只有19岁</span>——和你差不多的年纪。后来巡捕来了，他们转移到嘉兴南湖的一条游船上继续开会。那条船不大，但装下了一个民族的未来。
             </p>
@@ -33,8 +34,8 @@ export default function Chapter1() {
               那时候的中国内忧外患，民不聊生。这13个人完全可以出国留学、找份安稳工作，过自己的小日子。<span className="hl">但他们选择了最难的那条路</span>——建立一个组织，用一生去改变这个国家。当时全国不过<span className="num">58个党员</span>。没有人能想到，105年后，这个小小的组织变成了拥有<span className="num">超过一亿名成员</span>的世界第一大党。
             </p>
           </div>
-          <div style={{ flex: '0 0 auto', maxWidth: 320, borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <img src="/0.webp" alt="中共一大会址" style={{ display: 'block', width: '100%', height: 'auto' }} />
+          <div style={{ flex: '0 0 auto', maxWidth: 380, borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <img src={shipImage} alt="中共一大会址" style={{ display: 'block', width: '100%', height: 'auto' }} />
           </div>
         </div>
 
