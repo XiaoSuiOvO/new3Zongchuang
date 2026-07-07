@@ -288,7 +288,7 @@ export default function App() {
       <footer className="footer">
         <p>本页数据均来源于中共中央组织部历年《中国共产党党内统计公报》及公开党史资料</p>
         <p style={{ marginTop: 8 }}>
-          1921 — 2025 · 跨越105年的数据叙事
+          跨越105年的数据叙事
         </p>
       </footer>
     </>
